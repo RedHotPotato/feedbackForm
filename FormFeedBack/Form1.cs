@@ -4,7 +4,8 @@
     using System.Data;
     using System.Drawing;
     using System.Linq;
-    using System.Text;
+using System.Security.Cryptography;
+using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
@@ -15,7 +16,7 @@
         private int currentRating = 0;
         private FeedbackService feedbackService;
         private DataManager dataManager;
-        private const string AdminPassword = "admin123";
+        private const string AdminPassword = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9";
         public Form1()
         {
             InitializeComponent();
@@ -107,15 +108,34 @@
         // Log in using the correct password. Once logged in, show all available feedback.
         private void BtnAdminLogin_Click_1(object sender, EventArgs e) {
             string enteredPassword = txtAdminPassword.Text;
+            string hashedEnteredPassword = HashPassword(enteredPassword);
 
-            if (enteredPassword == AdminPassword) {
+            if (hashedEnteredPassword == AdminPassword)
+            {
                 MessageBox.Show("Admin login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 UpdateListBox();
                 txtAdminPassword.Clear();
             }
-            else {
+            else 
+            {
                 MessageBox.Show("Incorrect password. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void HidePassword(object sender, EventArgs e) {
+            txtAdminPassword.PasswordChar = '*';
+        }
+        private string HashPassword(string password) {
+            using (var sha256 = SHA256.Create()) {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashedBytes = sha256.ComputeHash(passwordBytes);
+
+                // Convert the hashed byte array to a hexadecimal string
+                StringBuilder hexString = new StringBuilder();
+                foreach (byte b in hashedBytes)
+                {
+                    hexString.Append(b.ToString("x2"));
+                }
+                return hexString.ToString();
             }
         }
     }

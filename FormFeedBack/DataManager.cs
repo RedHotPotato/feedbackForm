@@ -10,7 +10,9 @@ namespace FormFeedBack
 {
     public class DataManager
     {
-        private string filePath = "C:\\Users\\andre\\Desktop\\FormFeedBack\\FormFeedBack\\FormFeedBack\\feedback_data.txt";
+
+        string filePath = "C:\\Users\\andre\\Desktop\\FormFeedBack\\FormFeedBack\\FormFeedBack\\feedback_data.txt";
+
         private FeedbackService feedbackService;
 
         public DataManager(FeedbackService feedbackService) {

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRating5 = new System.Windows.Forms.Button();
@@ -41,13 +42,12 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.BtnSubmitFeedback = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.BtnAdminLogin = new System.Windows.Forms.Button();
             this.BtnDeleteFeedback = new System.Windows.Forms.Button();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
             this.listBoxFeedbacks = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabAdmin.SuspendLayout();
@@ -86,6 +86,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "FeedBack";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(184, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(550, 42);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Smart Student House Feedback";
             // 
             // label2
             // 
@@ -221,6 +231,25 @@
             this.tabAdmin.Text = "Admin Access";
             this.tabAdmin.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(311, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(317, 42);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Admin Dashboard";
+            // 
             // BtnAdminLogin
             // 
             this.BtnAdminLogin.Location = new System.Drawing.Point(108, 123);
@@ -250,6 +279,7 @@
             this.txtAdminPassword.Name = "txtAdminPassword";
             this.txtAdminPassword.Size = new System.Drawing.Size(201, 22);
             this.txtAdminPassword.TabIndex = 1;
+            this.txtAdminPassword.TextChanged += new System.EventHandler(this.HidePassword);
             // 
             // listBoxFeedbacks
             // 
@@ -260,35 +290,6 @@
             this.listBoxFeedbacks.Name = "listBoxFeedbacks";
             this.listBoxFeedbacks.Size = new System.Drawing.Size(598, 228);
             this.listBoxFeedbacks.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(184, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(550, 42);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Smart Student House Feedback";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(311, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(317, 42);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Admin Dashboard";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 16);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Password";
             // 
             // Form1
             // 
